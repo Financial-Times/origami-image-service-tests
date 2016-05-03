@@ -1,0 +1,23 @@
+{
+  "name": "origami-image-service-tests",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A suite of tests for comparing the existing Image Service with third-party providers",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Financial-Times/origami-image-service-tests.git"
+  },
+  "homepage": "origami-image-service-tests.herokuapp.com",
+  "bugs": "https://github.com/Financial-Times/origami-image-service-tests/issues",
+  "license": "MIT",
+  "engines": {
+    "node": "^6"
+  },
+  "dependencies": {
+    "express": "^4"
+  },
+  "main": "./index.js",
+  "scripts": {
+    "start": "node index.js"
+  }
+}
