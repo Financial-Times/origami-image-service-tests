@@ -1,0 +1,18 @@
+[
+	{
+		"label": "No parameters",
+		"source": "https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fim.ft-static.com%2Fcontent%2Fimages%2Fa60ae24b-b87f-439c-bf1b-6e54946b4cf2.img?source=test"
+	},
+	{
+		"label": "Width",
+		"source": "https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fim.ft-static.com%2Fcontent%2Fimages%2Fa60ae24b-b87f-439c-bf1b-6e54946b4cf2.img?source=test&width=200"
+	},
+	{
+		"label": "Height",
+		"source": "https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fim.ft-static.com%2Fcontent%2Fimages%2Fa60ae24b-b87f-439c-bf1b-6e54946b4cf2.img?source=test&height=150"
+	},
+	{
+		"label": "Width and height",
+		"source": "https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fim.ft-static.com%2Fcontent%2Fimages%2Fa60ae24b-b87f-439c-bf1b-6e54946b4cf2.img?source=test&width=200&height=200"
+	}
+]
