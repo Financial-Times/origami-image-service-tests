@@ -14,9 +14,20 @@ Running Locally
 This application requires [Node.js] 6+, and [npm].
 
   1. Install dependencies: `npm install`
-  2. Start the application: `npm start`
+  2. Start the application: `npm start` ([using environment variables as config](#configuration))
 
 (you can also run the application with `nodemon` or similar: `nodemon -e js,html .`)
+
+
+Configuration
+-------------
+
+You can configure the application with environment variables:
+
+  * `CLOUDINARY_ACCOUNT_NAME`: The Cloudinary account name (found via the admin panel)
+  * `IMGIX_SECURE_URL_TOKEN`: The imgix secure URL token (found via the admin panel)
+  * `IMGIX_SOURCE_NAME`: The imgix secure URL token (found via the admin panel)
+  * `PORT`: The port to run the application on _(Defaults to `8080`)_
 
 
 License

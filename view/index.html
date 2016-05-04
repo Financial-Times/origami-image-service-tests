@@ -1,14 +1,129 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html class="core" lang="en-GB">
 <head>
 	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>Origami Image Service Tests</title>
-</head>
-<body>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<h1>
-		Origami Image Service Tests
-	</h1>
+	<script>
+		var cutsTheMustard = ('querySelector' in document && 'localStorage' in window && 'addEventListener' in window);
+		if (cutsTheMustard) {
+			document.documentElement.className = document.documentElement.className.replace(/\bcore\b/g, 'enhanced');
+		}
+	</script>
+
+	<style>
+		.core .o--if-js,
+		.enhanced .o--if-no-js { display: none !important; }
+		html {
+			font-family: Georgia, serif;
+			overflow-x: hidden;
+		}
+		body {
+			margin: 0;
+		}
+		.origami-logo {
+			display: inline-block;
+			width: 40px;
+			height: 40px;
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+			background-size: contain;
+			background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA2My4zIDYzLjMnPjxnPjxnPjxwb2x5Z29uIGZpbGw9JyNEN0QxQzYnIHBvaW50cz0nMzEuNyw1MS4zIDE5LjksNjMuMiAwLjEsNDMuNCAwLjEsMTkuNycvPjxwb2x5bGluZSBmaWxsPScjQjdCNUFCJyBwb2ludHM9JzQzLjYsMCAxOS45LDAgMC4xLDE5LjcgMTIsMzEuNiA0My42LDAnLz48cG9seWxpbmUgZmlsbD0nIzg3ODY4MCcgcG9pbnRzPSc2My4zLDQzLjQgNjMuMywxOS43IDQzLjYsMCAzMS43LDExLjggNjMuMyw0My40Jy8+PHBvbHlnb24gZmlsbD0nIzY0NjQ2NCcgcG9pbnRzPScxOS45LDYzLjIgNDMuNiw2My4yIDYzLjMsNDMuNCA1MS41LDMxLjYnLz48cGF0aCBmaWxsPScjRDdEMUM2JyBkPSdtMC4wOTgwNjggMTkuNycvPjwvZz48L2c+PC9zdmc+");
+			vertical-align: top;
+			margin-right: 10px;
+		}
+	</style>
+	<link rel="stylesheet" href="https://origami-build.ft.com/v2/bundles/css?modules=o-fonts@^2,o-techdocs@^5,o-ft-icons@^3,o-grid@^4,o-table@^4" />
+	<script src="//polyfill.webservices.ft.com/v1/polyfill.min.js"></script>
+	<script>
+		(function(src) {
+			if (cutsTheMustard) {
+				var o = document.createElement('script');
+				o.async = o.defer = true;
+				o.src = src;
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(o, s);
+			}
+		}('https://origami-build.ft.com/v2/bundles/js?modules=o-fonts@^2,o-techdocs@^5,o-ft-icons@^3,o-grid@^4,o-table@^4'));
+	</script>
+</head>
+<body class="o-techdocs">
+
+	<header data-o-component="o-header" class="o-header">
+		<div class="o-header__container">
+			<div class="o-header__inner">
+				<div class="o-header__primary">
+					<div class="o-header__primary__left">
+						<a class="o-header__logo" href="/">
+							<span class="origami-logo"></span>
+							<h1 class="o-header__title">Origami</h1>
+						</a>
+					</div>
+				</div>
+				<div class="o-header__secondary"></div>
+			</div>
+		</div>
+	</header>
+
+	<div class="o-techdocs-container">
+		<div class="o-techdocs-layout">
+			<div class="o-techdocs-main o-techdocs-main--fullwidth">
+				<div class="o-techdocs-content">
+
+					<div class="o-grid-row">
+						<div data-o-grid-colspan="12 M9">
+							<h1 class="component-header">
+								Origami Image Service Tests
+							</h1>
+						</div>
+					</div>
+
+					<div class="o-grid-row">
+						<div data-o-grid-colspan="12">
+
+							<div class="o-table-wrapper">
+								<table class="o-table o-table--horizontal-lines o-table--vertical-lines o-table--horizontal-borders o-table--vertical-borders" data-o-component="o-table" data-o-table--js="">
+									<tbody>
+										<tr>
+											<th>Image Service v1</th>
+											<th>Cloudinary</th>
+											<th>imgix</th>
+										</tr>
+										{{#images}}
+											<tr>
+												<td>
+													<a href="{{imageService}}">
+														<i>{{label}}:</i><br />
+														<img src="{{imageService}}" alt="" />
+													</a>
+												</td>
+												<td>
+													<a href="{{cloudinary}}">
+														<i>{{label}}:</i><br />
+														<img src="{{cloudinary}}" alt="" />
+													</a>
+												</td>
+												<td>
+													<a href="{{imgix}}">
+														<i>{{label}}:</i><br />
+														<img src="{{imgix}}" alt="" />
+													</a>
+												</td>
+											</tr>
+										{{/images}}
+									</tbody>
+								</table>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
 
 </body>
 </html>
