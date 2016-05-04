@@ -14,5 +14,17 @@
 	{
 		"label": "Width and height",
 		"source": "https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fim.ft-static.com%2Fcontent%2Fimages%2Fa60ae24b-b87f-439c-bf1b-6e54946b4cf2.img?source=test&width=200&height=200"
+	},
+	{
+		"label": "Width, height, and fit (cover)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fim.ft-static.com%2Fcontent%2Fimages%2Fa60ae24b-b87f-439c-bf1b-6e54946b4cf2.img?source=test&width=200&height=200&fit=cover"
+	},
+	{
+		"label": "Width, height, and fit (contain)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fbit.ly%2F1T1hv1e?source=test&width=200&height=200&fit=contain"
+	},
+	{
+		"label": "Width, height, and fit (scale-down)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fbit.ly%2F1T1hv1e?source=test&width=200&height=200&fit=scale-down"
 	}
 ]
