@@ -54,6 +54,18 @@ describe('lib/image-service-url', () => {
 
 		});
 
+		describe('when the URL string has a `dpr` parameter', () => {
+
+			beforeEach(() => {
+				instance = new ImageServiceUrl(`${baseImageUrl}?dpr=2`);
+			});
+
+			it('has a `dpr` property', () => {
+				assert.strictEqual(instance.dpr, 2);
+			});
+
+		});
+
 		describe('when the URL string has a `fit` parameter', () => {
 
 			beforeEach(() => {

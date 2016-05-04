@@ -38,6 +38,10 @@
 			display: block;
 			border: 3px dotted #2e6e9e !important;
 		}
+		.test-image__issue {
+			font-weight: bold;
+			color: #c00;
+		}
 	</style>
 	<link rel="stylesheet" href="https://origami-build.ft.com/v2/bundles/css?modules=o-fonts@^2,o-techdocs@^5,o-ft-icons@^3,o-grid@^4,o-table@^4" />
 	<script src="//polyfill.webservices.ft.com/v1/polyfill.min.js"></script>
@@ -102,6 +106,9 @@
 														<i>{{label}}:</i>
 														<img src="{{imageService}}" alt="" class="test-image" />
 													</a>
+													{{#issues}}
+														<p class="test-image__issue">{{.}}</p>
+													{{/issues}}
 												</td>
 												<td>
 													<a href="{{cloudinary}}">
