@@ -34,6 +34,10 @@
 			vertical-align: top;
 			margin-right: 10px;
 		}
+		.test-image {
+			display: block;
+			border: 3px dotted #2e6e9e !important;
+		}
 	</style>
 	<link rel="stylesheet" href="https://origami-build.ft.com/v2/bundles/css?modules=o-fonts@^2,o-techdocs@^5,o-ft-icons@^3,o-grid@^4,o-table@^4" />
 	<script src="//polyfill.webservices.ft.com/v1/polyfill.min.js"></script>
@@ -95,20 +99,20 @@
 											<tr>
 												<td>
 													<a href="{{imageService}}">
-														<i>{{label}}:</i><br />
-														<img src="{{imageService}}" alt="" />
+														<i>{{label}}:</i>
+														<img src="{{imageService}}" alt="" class="test-image" />
 													</a>
 												</td>
 												<td>
 													<a href="{{cloudinary}}">
-														<i>{{label}}:</i><br />
-														<img src="{{cloudinary}}" alt="" />
+														<i>{{label}}:</i>
+														<img src="{{cloudinary}}" alt="" class="test-image" />
 													</a>
 												</td>
 												<td>
 													<a href="{{imgix}}">
-														<i>{{label}}:</i><br />
-														<img src="{{imgix}}" alt="" />
+														<i>{{label}}:</i>
+														<img src="{{imgix}}" alt="" class="test-image" />
 													</a>
 												</td>
 											</tr>
