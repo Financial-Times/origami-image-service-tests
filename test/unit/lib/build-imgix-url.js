@@ -58,6 +58,58 @@ describe('lib/build-imgix-url', () => {
 
 		});
 
+		describe('when `imageServiceUrl` has a `fit` property set to `contain`', () => {
+
+			beforeEach(() => {
+				imageServiceUrl.fit = 'contain';
+				returnValue = buildImgixUrl(imageServiceUrl, options);
+			});
+
+			it('returns the expected Cloudinary URL', () => {
+				assert.strictEqual(returnValue, 'https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?fit=clip');
+			});
+
+		});
+
+		describe('when `imageServiceUrl` has a `fit` property set to `cover`', () => {
+
+			beforeEach(() => {
+				imageServiceUrl.fit = 'cover';
+				returnValue = buildImgixUrl(imageServiceUrl, options);
+			});
+
+			it('returns the expected Cloudinary URL', () => {
+				assert.strictEqual(returnValue, 'https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?fit=crop');
+			});
+
+		});
+
+		describe('when `imageServiceUrl` has a `fit` property set to `scale-down`', () => {
+
+			beforeEach(() => {
+				imageServiceUrl.fit = 'scale-down';
+				returnValue = buildImgixUrl(imageServiceUrl, options);
+			});
+
+			it('returns the expected Cloudinary URL', () => {
+				assert.strictEqual(returnValue, 'https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?fit=max');
+			});
+
+		});
+
+		describe('when `imageServiceUrl` has a `fit` property set to `notavalue`', () => {
+
+			beforeEach(() => {
+				imageServiceUrl.fit = 'notavalue';
+				returnValue = buildImgixUrl(imageServiceUrl, options);
+			});
+
+			it('returns the expected Cloudinary URL', () => {
+				assert.strictEqual(returnValue, 'https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?fit=crop');
+			});
+
+		});
+
 		describe('when `imageServiceUrl` is not an instance of `ImageServiceUrl`', () => {
 
 			it('throws an error', () => {

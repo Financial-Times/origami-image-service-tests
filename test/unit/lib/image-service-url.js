@@ -26,6 +26,10 @@ describe('lib/image-service-url', () => {
 			assert.strictEqual(instance.source, 'http://example.com/images/foo.jpg');
 		});
 
+		it('has a `fit` property', () => {
+			assert.strictEqual(instance.fit, 'cover');
+		});
+
 		describe('when the URL string has a `width` parameter', () => {
 
 			beforeEach(() => {
@@ -46,6 +50,18 @@ describe('lib/image-service-url', () => {
 
 			it('has a `height` property', () => {
 				assert.strictEqual(instance.height, 123);
+			});
+
+		});
+
+		describe('when the URL string has a `fit` parameter', () => {
+
+			beforeEach(() => {
+				instance = new ImageServiceUrl(`${baseImageUrl}?fit=foo`);
+			});
+
+			it('has a `fit` property', () => {
+				assert.strictEqual(instance.fit, 'foo');
 			});
 
 		});
