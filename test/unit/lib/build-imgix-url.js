@@ -58,6 +58,19 @@ describe('lib/build-imgix-url', () => {
 
 		});
 
+		describe('when `imageServiceUrl` has a `dpr` property', () => {
+
+			beforeEach(() => {
+				imageServiceUrl.dpr = 2;
+				returnValue = buildImgixUrl(imageServiceUrl, options);
+			});
+
+			it('returns the expected imgix URL', () => {
+				assert.strictEqual(returnValue, `https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?dpr=2&fit=crop`);
+			});
+
+		});
+
 		describe('when `imageServiceUrl` has a `fit` property set to `contain`', () => {
 
 			beforeEach(() => {

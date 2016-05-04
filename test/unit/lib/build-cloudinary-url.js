@@ -58,6 +58,19 @@ describe('lib/build-cloudinary-url', () => {
 
 		});
 
+		describe('when `imageServiceUrl` has a `dpr` property', () => {
+
+			beforeEach(() => {
+				imageServiceUrl.dpr = 2;
+				returnValue = buildCloudinaryUrl(imageServiceUrl, options);
+			});
+
+			it('returns the expected Cloudinary URL', () => {
+				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill,dpr_2/http://example.com/images/foo.jpg');
+			});
+
+		});
+
 		describe('when `imageServiceUrl` has a `fit` property set to `contain`', () => {
 
 			beforeEach(() => {
