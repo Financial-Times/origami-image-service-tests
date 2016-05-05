@@ -123,6 +123,19 @@ describe('lib/build-cloudinary-url', () => {
 
 		});
 
+		describe('when `imageServiceUrl` has a `format` property', () => {
+
+			beforeEach(() => {
+				imageServiceUrl.format = 'png';
+				returnValue = buildCloudinaryUrl(imageServiceUrl, options);
+			});
+
+			it('returns the expected Cloudinary URL', () => {
+				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill,f_png/http://example.com/images/foo.jpg');
+			});
+
+		});
+
 		describe('when `imageServiceUrl` is not an instance of `ImageServiceUrl`', () => {
 
 			it('throws an error', () => {
