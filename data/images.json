@@ -55,5 +55,29 @@
 			"It looks like imgix doesn't support SVG...? I couldn't find anything in their docs."
 		],
 		"source": "https://image.webservices.ft.com/v1/images/raw/https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Ff%2Ffd%2FGhostscript_Tiger.svg?source=test&format=png"
+	},
+	{
+		"label": "Quality (lowest)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fbit.ly%2F1ToEqxv?source=test&quality=lowest"
+	},
+	{
+		"label": "Quality (low)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fbit.ly%2F1ToEqxv?source=test&quality=low"
+	},
+	{
+		"label": "Quality (medium)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fbit.ly%2F1ToEqxv?source=test&quality=medium"
+	},
+	{
+		"label": "Quality (high)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fbit.ly%2F1ToEqxv?source=test&quality=high"
+	},
+	{
+		"label": "Quality (highest)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fbit.ly%2F1ToEqxv?source=test&quality=highest"
+	},
+	{
+		"label": "Quality (lossless)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fbit.ly%2F1ToEqxv?source=test&quality=lossless"
 	}
 ]
