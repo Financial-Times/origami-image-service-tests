@@ -16,9 +16,9 @@
 		"source": "https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fim.ft-static.com%2Fcontent%2Fimages%2Fa60ae24b-b87f-439c-bf1b-6e54946b4cf2.img?source=test&width=200&height=200"
 	},
 	{
-		"label": "Width, height, and DPR",
+		"label": "Width and DPR",
 		"issues": [
-			"The image service sends a \"content-dpr\" header, third-party services don't."
+			"The image service sends a \"content-dpr\" header, third-party services don't. We can append this header ourselves if we use a proxy layer."
 		],
 		"source": "https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fim.ft-static.com%2Fcontent%2Fimages%2Fa60ae24b-b87f-439c-bf1b-6e54946b4cf2.img?source=test&width=200&dpr=2"
 	},
@@ -33,5 +33,27 @@
 	{
 		"label": "Width, height, and fit (scale-down)",
 		"source": "https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fbit.ly%2F1T1hv1e?source=test&width=200&height=200&fit=scale-down"
+	},
+	{
+		"label": "Format (jpg)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fim.ft-static.com%2Fcontent%2Fimages%2Fa60ae24b-b87f-439c-bf1b-6e54946b4cf2.img?source=test&format=jpg"
+	},
+	{
+		"label": "Format (png)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fim.ft-static.com%2Fcontent%2Fimages%2Fa60ae24b-b87f-439c-bf1b-6e54946b4cf2.img?source=test&format=png"
+	},
+	{
+		"label": "Format (svg)",
+		"issues": [
+			"It looks like imgix doesn't support SVG...? I couldn't find anything in their docs."
+		],
+		"source": "https://image.webservices.ft.com/v1/images/raw/https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Ff%2Ffd%2FGhostscript_Tiger.svg?source=test&format=svg"
+	},
+	{
+		"label": "Format (png from svg)",
+		"issues": [
+			"It looks like imgix doesn't support SVG...? I couldn't find anything in their docs."
+		],
+		"source": "https://image.webservices.ft.com/v1/images/raw/https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Ff%2Ffd%2FGhostscript_Tiger.svg?source=test&format=png"
 	}
 ]

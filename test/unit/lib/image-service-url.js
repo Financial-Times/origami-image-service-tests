@@ -78,6 +78,18 @@ describe('lib/image-service-url', () => {
 
 		});
 
+		describe('when the URL string has a `format` parameter', () => {
+
+			beforeEach(() => {
+				instance = new ImageServiceUrl(`${baseImageUrl}?format=png`);
+			});
+
+			it('has a `format` property', () => {
+				assert.strictEqual(instance.format, 'png');
+			});
+
+		});
+
 	});
 
 });
