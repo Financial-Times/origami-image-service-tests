@@ -29,7 +29,7 @@ describe('lib/build-imgix-url', () => {
 		});
 
 		it('returns the expected imgix URL', () => {
-			assert.strictEqual(returnValue, `https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?fit=crop`);
+			assert.strictEqual(returnValue, `https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?quality=70&fit=crop`);
 		});
 
 		describe('when `imageServiceUrl` has a `width` property', () => {
@@ -40,7 +40,7 @@ describe('lib/build-imgix-url', () => {
 			});
 
 			it('returns the expected imgix URL', () => {
-				assert.strictEqual(returnValue, `https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?w=123&fit=crop`);
+				assert.strictEqual(returnValue, `https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?w=123&quality=70&fit=crop`);
 			});
 
 		});
@@ -53,7 +53,7 @@ describe('lib/build-imgix-url', () => {
 			});
 
 			it('returns the expected imgix URL', () => {
-				assert.strictEqual(returnValue, `https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?h=123&fit=crop`);
+				assert.strictEqual(returnValue, `https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?h=123&quality=70&fit=crop`);
 			});
 
 		});
@@ -66,7 +66,7 @@ describe('lib/build-imgix-url', () => {
 			});
 
 			it('returns the expected imgix URL', () => {
-				assert.strictEqual(returnValue, `https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?dpr=2&fit=crop`);
+				assert.strictEqual(returnValue, `https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?dpr=2&quality=70&fit=crop`);
 			});
 
 		});
@@ -79,7 +79,7 @@ describe('lib/build-imgix-url', () => {
 			});
 
 			it('returns the expected Cloudinary URL', () => {
-				assert.strictEqual(returnValue, 'https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?fit=clip');
+				assert.strictEqual(returnValue, 'https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?quality=70&fit=clip');
 			});
 
 		});
@@ -92,7 +92,7 @@ describe('lib/build-imgix-url', () => {
 			});
 
 			it('returns the expected Cloudinary URL', () => {
-				assert.strictEqual(returnValue, 'https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?fit=crop');
+				assert.strictEqual(returnValue, 'https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?quality=70&fit=crop');
 			});
 
 		});
@@ -105,7 +105,7 @@ describe('lib/build-imgix-url', () => {
 			});
 
 			it('returns the expected Cloudinary URL', () => {
-				assert.strictEqual(returnValue, 'https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?fit=max');
+				assert.strictEqual(returnValue, 'https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?quality=70&fit=max');
 			});
 
 		});
@@ -118,7 +118,20 @@ describe('lib/build-imgix-url', () => {
 			});
 
 			it('returns the expected imgix URL', () => {
-				assert.strictEqual(returnValue, `https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?fm=png&fit=crop`);
+				assert.strictEqual(returnValue, `https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?fm=png&quality=70&fit=crop`);
+			});
+
+		});
+
+		describe('when `imageServiceUrl` has a `quality` property', () => {
+
+			beforeEach(() => {
+				imageServiceUrl.quality = 10;
+				returnValue = buildImgixUrl(imageServiceUrl, options);
+			});
+
+			it('returns the expected imgix URL', () => {
+				assert.strictEqual(returnValue, `https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?quality=10&fit=crop`);
 			});
 
 		});
