@@ -29,6 +29,20 @@ You can configure the application with environment variables:
   * `IMGIX_SOURCE_NAME`: The imgix secure URL token (found via the admin panel)
   * `PORT`: The port to run the application on _(Defaults to `8080`)_
 
+Example:
+
+```sh
+CLOUDINARY_ACCOUNT_NAME=xxx IMGIX_SECURE_URL_TOKEN=xxx IMGIX_SOURCE_NAME=xxx npm start
+```
+
+If you're a member of the Origami team, there's a secure note in our shared LastPass folder named "Origami Image Service Tests config vars" which has the run command pre-filled with our details.
+
+
+Deployment
+----------
+
+Commits/merges on master are automatically deployed to Heroku via CircleCI if the tests pass. You shouldn't need to deploy manually.
+
 
 License
 -------
