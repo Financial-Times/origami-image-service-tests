@@ -132,10 +132,6 @@ describe('lib/image-service-url', () => {
 				assert.calledWithExactly(instance._setEnumerableProperty, 'fit', ImageServiceUrl.validFitValues, 'scale-down');
 			});
 
-			it('sets the `fit` property to `value`', () => {
-				assert.strictEqual(instance.fit, 'scale-down');
-			});
-
 			describe('when `value` is `undefined`', () => {
 
 				beforeEach(() => {
@@ -167,8 +163,50 @@ describe('lib/image-service-url', () => {
 				assert.calledWithExactly(instance._setEnumerableProperty, 'format', ImageServiceUrl.validFormatValues, 'png');
 			});
 
-			it('sets the `format` property to `value`', () => {
-				assert.strictEqual(instance.format, 'png');
+			describe('when `value` is "auto"', () => {
+
+				beforeEach(() => {
+					delete instance.format;
+				});
+
+				describe('when the `qualityName` property is "lossless"', () => {
+
+					beforeEach(() => {
+						instance.qualityName = 'lossless';
+						instance.setFormat('auto');
+					});
+
+					it('sets the `format` property to "png"', () => {
+						assert.strictEqual(instance.format, 'png');
+					});
+
+				});
+
+				describe('when the `qualityName` property is not "lossless"', () => {
+
+					beforeEach(() => {
+						instance.setFormat('auto');
+					});
+
+					it('sets the `format` property to "jpg"', () => {
+						assert.strictEqual(instance.format, 'jpg');
+					});
+
+				});
+
+			});
+
+			describe('when `value` is `undefined`', () => {
+
+				beforeEach(() => {
+					instance._setEnumerableProperty.reset();
+					instance.setFormat();
+				});
+
+				it('defaults to "auto"', () => {
+					assert.calledWithExactly(instance._setEnumerableProperty, 'format', ImageServiceUrl.validFormatValues, 'auto');
+				});
+
 			});
 
 		});

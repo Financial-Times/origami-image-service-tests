@@ -29,7 +29,7 @@ describe('lib/build-cloudinary-url', () => {
 		});
 
 		it('returns the expected Cloudinary URL', () => {
-			assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill,q_70/http://example.com/images/foo.jpg');
+			assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill,f_jpg,q_70/http://example.com/images/foo.jpg');
 		});
 
 		describe('when `imageServiceUrl` has a `width` property', () => {
@@ -40,7 +40,7 @@ describe('lib/build-cloudinary-url', () => {
 			});
 
 			it('returns the expected Cloudinary URL', () => {
-				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill,q_70,w_123/http://example.com/images/foo.jpg');
+				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill,f_jpg,q_70,w_123/http://example.com/images/foo.jpg');
 			});
 
 		});
@@ -53,7 +53,7 @@ describe('lib/build-cloudinary-url', () => {
 			});
 
 			it('returns the expected Cloudinary URL', () => {
-				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill,h_123,q_70/http://example.com/images/foo.jpg');
+				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill,f_jpg,h_123,q_70/http://example.com/images/foo.jpg');
 			});
 
 		});
@@ -66,7 +66,7 @@ describe('lib/build-cloudinary-url', () => {
 			});
 
 			it('returns the expected Cloudinary URL', () => {
-				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill,dpr_2,q_70/http://example.com/images/foo.jpg');
+				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill,dpr_2,f_jpg,q_70/http://example.com/images/foo.jpg');
 			});
 
 		});
@@ -79,7 +79,7 @@ describe('lib/build-cloudinary-url', () => {
 			});
 
 			it('returns the expected Cloudinary URL', () => {
-				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fit,q_70/http://example.com/images/foo.jpg');
+				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fit,f_jpg,q_70/http://example.com/images/foo.jpg');
 			});
 
 		});
@@ -92,7 +92,7 @@ describe('lib/build-cloudinary-url', () => {
 			});
 
 			it('returns the expected Cloudinary URL', () => {
-				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill,q_70/http://example.com/images/foo.jpg');
+				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill,f_jpg,q_70/http://example.com/images/foo.jpg');
 			});
 
 		});
@@ -105,7 +105,7 @@ describe('lib/build-cloudinary-url', () => {
 			});
 
 			it('returns the expected Cloudinary URL', () => {
-				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_limit,q_70/http://example.com/images/foo.jpg');
+				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_limit,f_jpg,q_70/http://example.com/images/foo.jpg');
 			});
 
 		});
@@ -131,7 +131,7 @@ describe('lib/build-cloudinary-url', () => {
 			});
 
 			it('returns the expected Cloudinary URL', () => {
-				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill,q_10/http://example.com/images/foo.jpg');
+				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill,f_jpg,q_10/http://example.com/images/foo.jpg');
 			});
 
 		});
