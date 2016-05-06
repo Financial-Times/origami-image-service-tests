@@ -20,6 +20,7 @@ const images = require('./data/images.json').map(image => {
 	return {
 		label: image.label,
 		issues: image.issues,
+		info: imageServiceUrl,
 		imageService: image.source,
 		cloudinary: buildCloudinaryUrl(imageServiceUrl, {
 			cloudinaryAccountName

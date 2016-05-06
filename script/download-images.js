@@ -11,15 +11,15 @@ const downloadPath = `${__dirname}/../download`;
 const images = [];
 config.images.forEach((image) => {
 	images.push({
-		name: `${image.label} - Image Service`,
+		name: `${image.label} - Image Service.${image.info.format}`,
 		source: image.imageService
 	});
 	images.push({
-		name: `${image.label} - Cloudinary`,
+		name: `${image.label} - Cloudinary.${image.info.format}`,
 		source: image.cloudinary
 	});
 	images.push({
-		name: `${image.label} - imgix`,
+		name: `${image.label} - imgix.${image.info.format}`,
 		source: image.imgix
 	});
 });
