@@ -19,6 +19,16 @@ This application requires [Node.js] 6+, and [npm].
 (you can also run the application with `nodemon` or similar: `nodemon -e js,html .`)
 
 
+Downloading
+-----------
+
+If you need to do some file comparisons locally, e.g. visual diffing of images, you can use the download script. This requires the `curl` command to be present on your machine.
+
+Execute `./script/download-images.js`, this requires the same [configuration](#configuration) as running the application.
+
+This creates a `download` folder locally which will contain all of the downloaded images.
+
+
 Configuration
 -------------
 
@@ -33,6 +43,12 @@ Example:
 
 ```sh
 CLOUDINARY_ACCOUNT_NAME=xxx IMGIX_SECURE_URL_TOKEN=xxx IMGIX_SOURCE_NAME=xxx npm start
+```
+
+or
+
+```sh
+CLOUDINARY_ACCOUNT_NAME=xxx IMGIX_SECURE_URL_TOKEN=xxx IMGIX_SOURCE_NAME=xxx ./script/download-images.js
 ```
 
 If you're a member of the Origami team, there's a secure note in our shared LastPass folder named "Origami Image Service Tests config vars" which has the run command pre-filled with our details.
