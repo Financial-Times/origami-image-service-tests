@@ -29,7 +29,7 @@ describe('lib/build-cloudinary-url', () => {
 		});
 
 		it('returns the expected Cloudinary URL', () => {
-			assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill/http://example.com/images/foo.jpg');
+			assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill,f_jpg,q_70/http://example.com/images/foo.jpg');
 		});
 
 		describe('when `imageServiceUrl` has a `width` property', () => {
@@ -40,7 +40,7 @@ describe('lib/build-cloudinary-url', () => {
 			});
 
 			it('returns the expected Cloudinary URL', () => {
-				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill,w_123/http://example.com/images/foo.jpg');
+				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill,f_jpg,q_70,w_123/http://example.com/images/foo.jpg');
 			});
 
 		});
@@ -53,7 +53,7 @@ describe('lib/build-cloudinary-url', () => {
 			});
 
 			it('returns the expected Cloudinary URL', () => {
-				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill,h_123/http://example.com/images/foo.jpg');
+				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill,f_jpg,h_123,q_70/http://example.com/images/foo.jpg');
 			});
 
 		});
@@ -66,7 +66,7 @@ describe('lib/build-cloudinary-url', () => {
 			});
 
 			it('returns the expected Cloudinary URL', () => {
-				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill,dpr_2/http://example.com/images/foo.jpg');
+				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill,dpr_2,f_jpg,q_70/http://example.com/images/foo.jpg');
 			});
 
 		});
@@ -79,7 +79,7 @@ describe('lib/build-cloudinary-url', () => {
 			});
 
 			it('returns the expected Cloudinary URL', () => {
-				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fit/http://example.com/images/foo.jpg');
+				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fit,f_jpg,q_70/http://example.com/images/foo.jpg');
 			});
 
 		});
@@ -92,7 +92,7 @@ describe('lib/build-cloudinary-url', () => {
 			});
 
 			it('returns the expected Cloudinary URL', () => {
-				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill/http://example.com/images/foo.jpg');
+				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill,f_jpg,q_70/http://example.com/images/foo.jpg');
 			});
 
 		});
@@ -105,20 +105,7 @@ describe('lib/build-cloudinary-url', () => {
 			});
 
 			it('returns the expected Cloudinary URL', () => {
-				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_limit/http://example.com/images/foo.jpg');
-			});
-
-		});
-
-		describe('when `imageServiceUrl` has a `fit` property set to `notavalue`', () => {
-
-			beforeEach(() => {
-				imageServiceUrl.fit = 'notavalue';
-				returnValue = buildCloudinaryUrl(imageServiceUrl, options);
-			});
-
-			it('returns the expected Cloudinary URL', () => {
-				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill/http://example.com/images/foo.jpg');
+				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_limit,f_jpg,q_70/http://example.com/images/foo.jpg');
 			});
 
 		});
@@ -131,7 +118,20 @@ describe('lib/build-cloudinary-url', () => {
 			});
 
 			it('returns the expected Cloudinary URL', () => {
-				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill,f_png/http://example.com/images/foo.jpg');
+				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill,f_png,q_70/http://example.com/images/foo.jpg');
+			});
+
+		});
+
+		describe('when `imageServiceUrl` has a `quality` property', () => {
+
+			beforeEach(() => {
+				imageServiceUrl.quality = 10;
+				returnValue = buildCloudinaryUrl(imageServiceUrl, options);
+			});
+
+			it('returns the expected Cloudinary URL', () => {
+				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/c_fill,f_jpg,q_10/http://example.com/images/foo.jpg');
 			});
 
 		});
