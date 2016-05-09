@@ -136,6 +136,19 @@ describe('lib/build-cloudinary-url', () => {
 
 		});
 
+		describe('when `imageServiceUrl` has a `bgcolor` property', () => {
+
+			beforeEach(() => {
+				imageServiceUrl.bgcolor = 'ff0000';
+				returnValue = buildCloudinaryUrl(imageServiceUrl, options);
+			});
+
+			it('returns the expected Cloudinary URL', () => {
+				assert.strictEqual(returnValue, 'http://res.cloudinary.com/foo-account/image/fetch/b_rgb:ff0000,c_fill,f_jpg,q_70/http://example.com/images/foo.jpg');
+			});
+
+		});
+
 		describe('when `imageServiceUrl` is not an instance of `ImageServiceUrl`', () => {
 
 			it('throws an error', () => {
