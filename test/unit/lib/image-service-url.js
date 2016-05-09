@@ -1,12 +1,17 @@
 'use strict';
 
 const assert = require('proclaim');
+const mockery = require('mockery');
 const sinon = require('sinon');
 
 describe('lib/image-service-url', () => {
+	let colornames;
 	let ImageServiceUrl;
 
 	beforeEach(() => {
+		colornames = sinon.stub();
+		mockery.registerMock('colornames', colornames);
+
 		ImageServiceUrl = require('../../../lib/image-service-url');
 	});
 
@@ -250,6 +255,38 @@ describe('lib/image-service-url', () => {
 
 		});
 
+		it('has a `setBgColor` method', () => {
+			assert.isFunction(instance.setBgColor);
+		});
+
+		describe('.setBgColor(value)', () => {
+
+			beforeEach(() => {
+				sinon.spy(instance, '_setColorProperty');
+				instance.setBgColor('ff0000');
+			});
+
+			it('calls the `_setColorProperty` method with the expected arguments', () => {
+				assert.calledOnce(instance._setColorProperty);
+				assert.calledWithExactly(instance._setColorProperty, 'bgcolor', 'ff0000');
+			});
+
+			describe('when the `format` property is `png`', () => {
+
+				beforeEach(() => {
+					instance._setColorProperty.reset();
+					instance.format = 'png';
+					instance.setBgColor('ff0000');
+				});
+
+				it('sets the `bgcolor` property to `undefined`', () => {
+					assert.calledWithExactly(instance._setColorProperty, 'bgcolor', undefined);
+				});
+
+			});
+
+		});
+
 		it('has a `_setNumericProperty` method', () => {
 			assert.isFunction(instance._setNumericProperty);
 		});
@@ -347,6 +384,96 @@ describe('lib/image-service-url', () => {
 
 				it('throws an error', () => {
 					assert.throws(() => instance._setEnumerableProperty('foo', ['bar', 'baz'], 'qux'), 'Invalid foo parameter');
+				});
+
+			});
+
+		});
+
+		it('has a `_setColorProperty` method', () => {
+			assert.isFunction(instance._setColorProperty);
+		});
+
+		describe('._setColorProperty(property, value)', () => {
+
+			beforeEach(() => {
+				colornames.withArgs('red').returns('#ff0000');
+				instance._setColorProperty('bgcolor', 'ff0000');
+			});
+
+			it('sets the matching property to `value`', () => {
+				assert.strictEqual(instance.bgcolor, 'ff0000');
+			});
+
+			describe('when `value` is a short hex code', () => {
+
+				beforeEach(() => {
+					instance._setColorProperty('bgcolor', '0f0');
+				});
+
+				it('sets the matching property to the full hex code', () => {
+					assert.strictEqual(instance.bgcolor, '00ff00');
+				});
+
+			});
+
+			describe('when `value` is "transparent"', () => {
+
+				beforeEach(() => {
+					instance._setColorProperty('bgcolor', 'transparent');
+				});
+
+				it('sets the matching property to "ffffff"', () => {
+					assert.strictEqual(instance.bgcolor, 'ffffff');
+				});
+
+			});
+
+			describe('when `value` is a named color', () => {
+
+				beforeEach(() => {
+					instance._setColorProperty('bgcolor', 'red');
+				});
+
+				it('sets the matching property to the full hex code', () => {
+					assert.strictEqual(instance.bgcolor, 'ff0000');
+				});
+
+			});
+
+			describe('when `value` is a hex code including the preceeding hash', () => {
+
+				beforeEach(() => {
+					instance._setColorProperty('bgcolor', '#ff0000');
+				});
+
+				it('sets the matching property to `value` with the hash removed', () => {
+					assert.strictEqual(instance.bgcolor, 'ff0000');
+				});
+
+			});
+
+			describe('when `value` is `undefined`', () => {
+
+				beforeEach(() => {
+					instance._setColorProperty('bgcolor');
+				});
+
+				it('sets the matching property to `undefined`', () => {
+					assert.isUndefined(instance.bgcolor);
+				});
+
+			});
+
+			describe('when `value` is not a valid hex color or named colour', () => {
+
+				it('sets the matching property to "000000"', () => {
+					instance._setColorProperty('bgcolor1', '0f');
+					assert.strictEqual(instance.bgcolor1, '000000');
+					instance._setColorProperty('bgcolor2', 'ff00000');
+					assert.strictEqual(instance.bgcolor2, '000000');
+					instance._setColorProperty('bgcolor3', 'hello');
+					assert.strictEqual(instance.bgcolor3, '000000');
 				});
 
 			});

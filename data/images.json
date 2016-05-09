@@ -79,5 +79,21 @@
 	{
 		"label": "Quality (lossless)",
 		"source": "https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fbit.ly%2F1ToEqxv?source=test&quality=lossless"
+	},
+	{
+		"label": "Background Color (with png)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F4%2F47%2FPNG_transparency_demonstration_1.png?source=test&bgcolor=ff0000&format=png"
+	},
+	{
+		"label": "Background Color (hex)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F4%2F47%2FPNG_transparency_demonstration_1.png?source=test&bgcolor=ffff00&format=jpg"
+	},
+	{
+		"label": "Background Color (named)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F4%2F47%2FPNG_transparency_demonstration_1.png?source=test&bgcolor=hotpink&format=jpg"
+	},
+	{
+		"label": "Background Color (with svg conversion)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Ff%2Ffd%2FGhostscript_Tiger.svg?source=test&bgcolor=turquoise&format=jpg"
 	}
 ]

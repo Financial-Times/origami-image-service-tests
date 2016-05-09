@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "cloudinary": "^1",
+    "colornames": "^1",
     "consolidate": "~0.14",
     "express": "^4",
     "hogan.js": "^3",

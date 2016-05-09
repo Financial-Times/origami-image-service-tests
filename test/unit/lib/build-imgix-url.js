@@ -136,6 +136,19 @@ describe('lib/build-imgix-url', () => {
 
 		});
 
+		describe('when `imageServiceUrl` has a `bgcolor` property', () => {
+
+			beforeEach(() => {
+				imageServiceUrl.bgcolor = 'ff0000';
+				returnValue = buildImgixUrl(imageServiceUrl, options);
+			});
+
+			it('returns the expected imgix URL', () => {
+				assert.strictEqual(returnValue, `https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?bg=ff0000&fm=jpg&quality=70&fit=crop`);
+			});
+
+		});
+
 		describe('when `imageServiceUrl` is not an instance of `ImageServiceUrl`', () => {
 
 			it('throws an error', () => {
