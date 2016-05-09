@@ -50,7 +50,11 @@
 		"source": "https://image.webservices.ft.com/v1/images/raw/https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Ff%2Ffd%2FGhostscript_Tiger.svg?source=test&format=svg"
 	},
 	{
-		"label": "Format (png from svg)",
+		"label": "Format (png from svg - simple)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Ff%2Ffa%2FApple_logo_black.svg?source=test&format=png"
+	},
+	{
+		"label": "Format (png from svg - complex)",
 		"issues": [
 			"It looks like imgix doesn't support SVG...? I couldn't find anything in their docs."
 		],
@@ -93,7 +97,43 @@
 		"source": "https://image.webservices.ft.com/v1/images/raw/https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F4%2F47%2FPNG_transparency_demonstration_1.png?source=test&bgcolor=hotpink&format=jpg"
 	},
 	{
-		"label": "Background Color (with svg conversion)",
+		"label": "Background Color (with svg conversion - simple)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Ff%2Ffa%2FApple_logo_black.svg?source=test&bgcolor=turquoise&format=jpg"
+	},
+	{
+		"label": "Background Color (with svg conversion - complex)",
 		"source": "https://image.webservices.ft.com/v1/images/raw/https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Ff%2Ffd%2FGhostscript_Tiger.svg?source=test&bgcolor=turquoise&format=jpg"
+	},
+	{
+		"label": "Tint (no colors)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fbit.ly%2F1ToEqxv?source=test&tint"
+	},
+	{
+		"label": "Tint (one color)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fbit.ly%2F1ToEqxv?source=test&tint=ff0000"
+	},
+	{
+		"label": "Tint (two colors)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fbit.ly%2F1ToEqxv?source=test&tint=ff0000,00ff00"
+	},
+	{
+		"label": "Tint (no colors with png)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F4%2F47%2FPNG_transparency_demonstration_1.png?source=test&tint"
+	},
+	{
+		"label": "Tint (one color with png)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F4%2F47%2FPNG_transparency_demonstration_1.png?source=test&tint=ff0000"
+	},
+	{
+		"label": "Tint (two colors with png)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F4%2F47%2FPNG_transparency_demonstration_1.png?source=test&tint=ff0000,00ff00"
+	},
+	{
+		"label": "Tint (colors with svg - simple)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Ff%2Ffa%2FApple_logo_black.svg?source=test&tint=ff0000,ff0000&format=svg"
+	},
+	{
+		"label": "Tint (colors with svg - complex)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Ff%2Ffd%2FGhostscript_Tiger.svg?source=test&tint=ff0000,ff0000&format=svg"
 	}
 ]
