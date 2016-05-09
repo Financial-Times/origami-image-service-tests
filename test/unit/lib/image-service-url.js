@@ -287,6 +287,108 @@ describe('lib/image-service-url', () => {
 
 		});
 
+		describe('.setTint(value)', () => {
+
+			describe('when `value` is an empty string', () => {
+
+				beforeEach(() => {
+					instance.setTint('');
+				});
+
+				it('sets the `tint` property to an array containing only FT pink', () => {
+					assert.deepEqual(instance.tint, ['fff1e0']);
+				});
+
+			});
+
+			describe('when `value` is a single color', () => {
+
+				beforeEach(() => {
+					sinon.stub(instance, '_sanitizeColorValue').withArgs('raw').returns('sanitized');
+					instance.setTint('raw');
+				});
+
+				it('sets the `tint` property to an array containing the sanitized versions of that color', () => {
+					assert.deepEqual(instance.tint, ['sanitized']);
+				});
+
+			});
+
+			describe('when `value` is two colors', () => {
+
+				beforeEach(() => {
+					sinon.stub(instance, '_sanitizeColorValue');
+					instance._sanitizeColorValue.withArgs('raw1').returns('sanitized1');
+					instance._sanitizeColorValue.withArgs('raw2').returns('sanitized2');
+					instance.setTint('raw1,raw2');
+				});
+
+				it('sets the `tint` property to an array containing the sanitized versions of those colors', () => {
+					assert.deepEqual(instance.tint, ['sanitized1', 'sanitized2']);
+				});
+
+			});
+
+			describe('when `value` is three or more colors', () => {
+
+				beforeEach(() => {
+					sinon.stub(instance, '_sanitizeColorValue');
+					instance._sanitizeColorValue.withArgs('raw1').returns('sanitized1');
+					instance._sanitizeColorValue.withArgs('raw2').returns('sanitized2');
+					instance._sanitizeColorValue.withArgs('raw3').returns('sanitized3');
+					instance.setTint('raw1,raw2,raw3');
+				});
+
+				it('sets the `tint` property to an array containing the sanitized versions of the first two colors', () => {
+					assert.deepEqual(instance.tint, ['sanitized1', 'sanitized2']);
+				});
+
+			});
+
+			describe('when the colors in `value` have extra whitespace', () => {
+
+				beforeEach(() => {
+					sinon.stub(instance, '_sanitizeColorValue');
+					instance._sanitizeColorValue.withArgs('raw1').returns('sanitized1');
+					instance._sanitizeColorValue.withArgs('raw2').returns('sanitized2');
+					instance.setTint('  raw1  ,  raw2  ');
+				});
+
+				it('sets the `tint` property to an array containing the sanitized versions of those colors', () => {
+					assert.deepEqual(instance.tint, ['sanitized1', 'sanitized2']);
+				});
+
+			});
+
+			describe('when one of the colors in `value` sanitizes to `undefined`', () => {
+
+				beforeEach(() => {
+					sinon.stub(instance, '_sanitizeColorValue');
+					instance._sanitizeColorValue.withArgs('raw1').returns('sanitized1');
+					instance._sanitizeColorValue.withArgs('raw2').returns(undefined);
+					instance.setTint('raw1,');
+				});
+
+				it('sets the `tint` property to an array with `undefined` values replaced with "ffffff"', () => {
+					assert.deepEqual(instance.tint, ['sanitized1', 'ffffff']);
+				});
+
+			});
+
+			describe('when `value` is `undefined`', () => {
+
+				beforeEach(() => {
+					instance.setTint();
+				});
+
+				it('sets the `tint` property to `undefined`', () => {
+					assert.isUndefined(instance.tint);
+				});
+
+			});
+
+		});
+
 		it('has a `_setNumericProperty` method', () => {
 			assert.isFunction(instance._setNumericProperty);
 		});
@@ -459,7 +561,7 @@ describe('lib/image-service-url', () => {
 
 			});
 
-			describe('when `value` is not a valid hex color or named colour', () => {
+			describe('when `value` is not a valid hex color or named color', () => {
 
 				it('returns "000000"', () => {
 					assert.strictEqual(instance._sanitizeColorValue('0f'), '000000');
