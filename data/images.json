@@ -135,5 +135,21 @@
 	{
 		"label": "Tint (colors with svg - complex)",
 		"source": "https://image.webservices.ft.com/v1/images/raw/https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Ff%2Ffd%2FGhostscript_Tiger.svg?source=test&tint=ff0000,ff0000&format=svg"
+	},
+	{
+		"label": "Tint (real request 1)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/http:/next-geebee.ft.com/assets/icons/brand-ft-masthead.svg?source=test&tint="
+	},
+	{
+		"label": "Tint (real request 2)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fnext-geebee.ft.com%2Fassets%2Ficons%2Fipad-portrait.svg?source=test&tint=%2327757B,%2327757B&format=svg"
+	},
+	{
+		"label": "Tint (real request 3)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fnext-geebee.ft.com%2Fassets%2Ficons%2Fsocial-facebook.svg?source=test&tint=%2374736C,%2374736C&format=svg"
+	},
+	{
+		"label": "Tint (real request 4)",
+		"source": "https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fnext-geebee.ft.com%2Fassets%2Ficons%2Fbrand-fast-ft.svg?source=test&tint=%23333333,%23333333&format=png&width=20"
 	}
 ]
