@@ -35,7 +35,7 @@
     "test": "npm run lint && npm run test-coverage",
     "test-unit": "NODE_ENV=test ./node_modules/.bin/mocha ./test/unit --recursive",
     "test-instrument": "NODE_ENV=test ./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- ./test/unit --recursive",
-    "test-coverage": "npm run test-instrument && ./node_modules/.bin/istanbul check-coverage --statement 90 --branch 90 --function 90",
+    "test-coverage": "npm run test-instrument && ./node_modules/.bin/istanbul check-coverage --statement 85 --branch 85 --function 85",
     "lint": "./node_modules/.bin/eslint ."
   }
 }
