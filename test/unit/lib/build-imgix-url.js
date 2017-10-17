@@ -29,7 +29,7 @@ describe('lib/build-imgix-url', () => {
 		});
 
 		it('returns the expected imgix URL', () => {
-			assert.strictEqual(returnValue, `https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?fm=jpg&quality=70&fit=crop`);
+			assert.strictEqual(returnValue, 'https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?fm=jpg&quality=70&fit=crop');
 		});
 
 		describe('when `imageServiceUrl` has a `width` property', () => {
@@ -40,7 +40,7 @@ describe('lib/build-imgix-url', () => {
 			});
 
 			it('returns the expected imgix URL', () => {
-				assert.strictEqual(returnValue, `https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?w=123&fm=jpg&quality=70&fit=crop`);
+				assert.strictEqual(returnValue, 'https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?w=123&fm=jpg&quality=70&fit=crop');
 			});
 
 		});
@@ -53,7 +53,7 @@ describe('lib/build-imgix-url', () => {
 			});
 
 			it('returns the expected imgix URL', () => {
-				assert.strictEqual(returnValue, `https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?h=123&fm=jpg&quality=70&fit=crop`);
+				assert.strictEqual(returnValue, 'https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?h=123&fm=jpg&quality=70&fit=crop');
 			});
 
 		});
@@ -66,7 +66,7 @@ describe('lib/build-imgix-url', () => {
 			});
 
 			it('returns the expected imgix URL', () => {
-				assert.strictEqual(returnValue, `https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?dpr=2&fm=jpg&quality=70&fit=crop`);
+				assert.strictEqual(returnValue, 'https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?dpr=2&fm=jpg&quality=70&fit=crop');
 			});
 
 		});
@@ -118,7 +118,7 @@ describe('lib/build-imgix-url', () => {
 			});
 
 			it('returns the expected imgix URL', () => {
-				assert.strictEqual(returnValue, `https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?fm=png&quality=70&fit=crop`);
+				assert.strictEqual(returnValue, 'https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?fm=png&quality=70&fit=crop');
 			});
 
 		});
@@ -131,7 +131,7 @@ describe('lib/build-imgix-url', () => {
 			});
 
 			it('returns the expected imgix URL', () => {
-				assert.strictEqual(returnValue, `https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?fm=jpg&quality=10&fit=crop`);
+				assert.strictEqual(returnValue, 'https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?fm=jpg&quality=10&fit=crop');
 			});
 
 		});
@@ -144,7 +144,7 @@ describe('lib/build-imgix-url', () => {
 			});
 
 			it('returns the expected imgix URL', () => {
-				assert.strictEqual(returnValue, `https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?bg=ff0000&fm=jpg&quality=70&fit=crop`);
+				assert.strictEqual(returnValue, 'https://foo-source.imgix.net/http%3A%2F%2Fexample.com%2Fimages%2Ffoo.jpg?bg=ff0000&fm=jpg&quality=70&fit=crop');
 			});
 
 		});

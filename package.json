@@ -22,12 +22,12 @@
     "imgix-core-js": "^1"
   },
   "devDependencies": {
-    "eslint": "^2",
+    "eslint": "^4",
     "istanbul": "~0.4",
-    "mocha": "^2",
-    "mockery": "^1",
+    "mocha": "^4",
+    "mockery": "^2",
     "proclaim": "^3",
-    "sinon": "^1"
+    "sinon": "^4"
   },
   "main": "./index.js",
   "scripts": {
